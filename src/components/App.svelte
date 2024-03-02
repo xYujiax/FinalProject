@@ -7,11 +7,12 @@
   let sampleSize = 1; // default n
   let autoplay = false; // autoplay boolean for status
   let intervalId; // for autoplay interval
-  const maxSampleSize = 150; // max n
+  const maxSampleSize = 149; // max n
 
-  const margin = { top: 10, right: 30, bottom: 30, left: 40 };
+  const margin = { top: 0, right: 30, bottom: 30, left: 100 };
   const width = 450 - margin.left - margin.right;
   const height = 400 - margin.top - margin.bottom;
+
   const numberOfSamples = 1000; // # of samples to draw
 
   // fetch data (csv)
@@ -59,7 +60,7 @@
 
     svg.append("g")
       .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x).tickFormat(d3.format('.2f')));
 
     // generate a histogram using sample means
     const histogram = d3.histogram()
@@ -108,8 +109,18 @@
   }
 </script>
 
-<div>
-  <button on:click={toggleAutoplay} style="width: 75px; text-align: center">{autoplay ? 'Stop' : 'Autoplay'}</button><br>
-  <input type="range" id="sampleSize" style="width: 300px;" min="1" max="150" bind:value={sampleSize} /><br>
-  <label for="sampleSize">n={sampleSize}</label>
-</div>
+<main>
+  <div>
+    <button on:click={toggleAutoplay} style="width: 100px; text-align: center">{autoplay ? 'Stop' : 'Autoplay'}</button><br>
+    <input type="range" id="sampleSize" style="width: 800px;" min="1" max={maxSampleSize} bind:value={sampleSize}/><br>
+    <label for="sampleSize">n={sampleSize}</label>
+  </div>
+</main>
+
+<style>
+  svg {
+    max-width: 200%;
+    height: auto;
+  }
+
+</style>
