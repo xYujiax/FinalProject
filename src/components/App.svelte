@@ -47,9 +47,10 @@
 
     // sample means
     const sampleMeans = Array.from({ length: numberOfSamples }, () => {
-      const sample = d3.shuffle(irisData)
-        .slice(0, currentSampleSize)
-        .map(d => d['sepal length']);
+      const sample = Array.from({ length: currentSampleSize }, () => {
+      const randomIndex = Math.floor(Math.random() * irisData.length); // with replacement
+      return irisData[randomIndex]['sepal length']; 
+      });
       return d3.mean(sample);
     });
 
