@@ -3,28 +3,28 @@
   import * as d3 from 'd3';
 
   let svg;
-  let irisData = []; // to store csv data
+  let recipesData = []; // to store csv data
   let sampleSize = 1; // default n
   let autoplay = false; // autoplay boolean for status
   let intervalId; // for autoplay interval
-  const maxSampleSize = 149; // max n
+  const maxSampleSize = 9651; // max n
 
   const margin = { top: 0, right: 30, bottom: 30, left: 100 };
-  const width = 450 - margin.left - margin.right;
-  const height = 400 - margin.top - margin.bottom;
+  const width = 1000 - margin.left - margin.right;
+  const height = 600 - margin.top - margin.bottom;
 
   const numberOfSamples = 1000; // # of samples to draw
 
   // fetch data (csv)
   onMount(async () => {
-    const response = await fetch('iris-petals.csv');
+    const response = await fetch('recipe_calories.csv');
     const text = await response.text();
-    irisData = d3.csvParse(text, d3.autoType);
+    recipesData = d3.csvParse(text, d3.autoType);
     createHistogram(sampleSize);
   });
 
   // histogram generation logic
-  $: if (irisData.length > 0 && sampleSize) {
+  $: if (recipesData.length > 0 && sampleSize) {
     createHistogram(sampleSize);
   }
 
@@ -33,6 +33,24 @@
     clearInterval(intervalId);
     intervalId = null;
   }
+    // kde func
+  function kernelDensityEstimator(kernel, X) {
+    return function(V) {
+      return X.map(function(x) {
+        return [x, d3.mean(V, function(v) { return kernel(x - v); })];
+      });
+    };
+  }
+
+  // kde function (gaussian kernel)
+  function kernelEpanechnikov(k) {
+    return function(v) {
+      return Math.abs(v /= k) <= 1 ? .75 * (1 - v * v) / k : 0;
+    };
+  }
+
+  // kde bandwidth
+  let bandwidth = 0.1;
 
   function createHistogram(currentSampleSize) {
     // clear prev hist
@@ -48,8 +66,8 @@
     // sample means
     const sampleMeans = Array.from({ length: numberOfSamples }, () => {
       const sample = Array.from({ length: currentSampleSize }, () => {
-      const randomIndex = Math.floor(Math.random() * irisData.length); // with replacement
-      return irisData[randomIndex]['sepal length']; 
+      const randomIndex = Math.floor(Math.random() * recipesData.length); // with replacement
+      return recipesData[randomIndex]['calories']; 
       });
       return d3.mean(sample);
     });
@@ -79,6 +97,14 @@
     svg.append("g")
       .call(d3.axisLeft(y));
 
+    const kde = kernelDensityEstimator(kernelEpanechnikov(bandwidth), x.ticks(40))(sampleMeans);
+
+    // generate kde line
+    const line = d3.line()
+      .curve(d3.curveBasis) // to make line smooth
+      .x(function(d) { return x(d[0]); })
+      .y(function(d) { return y(d[1]); });
+
     // bars to svg
     svg.selectAll("rect")
       .data(bins)
@@ -89,6 +115,16 @@
       .attr("width", d => Math.max(0, x(d.x1) - x(d.x0) - 1)) // Math.max() to prevent negative width
       .attr("height", d => height - y(d.length))
       .style("fill", "black");
+
+    // kde curve
+    svg.append("path")
+      .datum(kde)
+      .attr("fill", "none")
+      .attr("stroke", "#ff0000") // line color
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 1.5)
+      .attr("d", line);
   }
 
   // autoplay logic
@@ -111,17 +147,11 @@
 </script>
 
 <main>
-  <div>
+  <div class="centered-container">
+    <h2>Recipe Calories: Distribution of Sample Means</h2>
+    <div id="histogram"></div>
     <button on:click={toggleAutoplay} style="width: 100px; text-align: center">{autoplay ? 'Stop' : 'Autoplay'}</button><br>
     <input type="range" id="sampleSize" style="width: 800px;" min="1" max={maxSampleSize} bind:value={sampleSize}/><br>
     <label for="sampleSize">n={sampleSize}</label>
   </div>
 </main>
-
-<style>
-  svg {
-    max-width: 200%;
-    height: auto;
-  }
-
-</style>
