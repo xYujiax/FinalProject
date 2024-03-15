@@ -97,7 +97,10 @@
     svg.append("g")
       .call(d3.axisLeft(y));
 
+    const totalArea = d3.sum(bins, bin => (bin.x1 - bin.x0) * bin.length);
     const kde = kernelDensityEstimator(kernelEpanechnikov(bandwidth), x.ticks(40))(sampleMeans);
+    const kdeArea = d3.sum(kde, d => d[1]) * (kde[1][0] - kde[0][0]);
+    const scaledKde = kde.map(d => [d[0], d[1] * totalArea / kdeArea]);
 
     // generate kde line
     const line = d3.line()
@@ -118,7 +121,7 @@
 
     // kde curve
     svg.append("path")
-      .datum(kde)
+      .datum(scaledKde)
       .attr("fill", "none")
       .attr("stroke", "#ff0000") // line color
       .attr("stroke-linejoin", "round")
