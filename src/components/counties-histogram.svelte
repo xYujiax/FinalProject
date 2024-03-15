@@ -7,7 +7,7 @@
   let sampleSize = 1; // default n
   let autoplay = false; // autoplay boolean for status
   let intervalId; // for autoplay interval
-  const maxSampleSize = 3095; // max n
+  const maxSampleSize = 499; // max n
 
   const margin = { top: 0, right: 30, bottom: 30, left: 100 };
   const width = 1000 - margin.left - margin.right;
