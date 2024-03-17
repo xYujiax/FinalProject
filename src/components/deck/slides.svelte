@@ -47,10 +47,6 @@
 <div class='reveal'>
     <div class='slides'>
         <Presentation />
-        <section id='last-slide'>
-            Now try for yourself!
-            <button id='nuke'>Leave</button>
-        </section>
     </div>
 </div>
 
