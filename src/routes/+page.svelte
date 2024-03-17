@@ -1,5 +1,7 @@
 <script>
   import { writable } from 'svelte/store';
+  import Slides from '../components/deck/slides.svelte';
+  import '../app.pcss'; // took from layout.svelte bc we only have one page for our site
   import IrisRaw from '../components/iris-raw.svelte';
   import IrisCLT from '../components/iris-histogram.svelte';
   import PopulationRaw from '../components/counties-raw.svelte'
@@ -7,6 +9,7 @@
   import RecipesRaw from '../components/recipes-raw.svelte'
   import RecipesCLT from '../components/recipes-histogram.svelte';
   import '../components/styles.css';
+  
   
   export const selectedDataset = writable('iris petals dataset');
   export const selectedDistribution = writable('raw');
@@ -21,6 +24,9 @@
     selectedDistribution.set(event.target.value);
   }
 </script>
+
+<Slides />
+
 
 <main>
   <h1>Final Project Prototype</h1>
