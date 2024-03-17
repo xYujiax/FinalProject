@@ -1,6 +1,6 @@
 <script>
   import { writable } from 'svelte/store';
-  import Slides from '../components/deck/slides.svelte';
+  import Slides from '../components/slides.svelte';
   import '../app.pcss'; // took from layout.svelte bc we only have one page for our site
   import IrisRaw from '../components/iris-raw.svelte';
   import IrisCLT from '../components/iris-histogram.svelte';
