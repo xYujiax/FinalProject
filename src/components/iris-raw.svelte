@@ -5,7 +5,7 @@
   let svg;
   let irisData = []; // to store csv data
 
-  const margin = { top: 0, right: 30, bottom: 30, left: 100 };
+  const margin = { top: 10, right: 30, bottom: 30, left: 30 };
   const width = 1000 - margin.left - margin.right;
   const height = 600 - margin.top - margin.bottom;
   

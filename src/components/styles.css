@@ -42,6 +42,5 @@
     display: flex;
     justify-content: center; /* centering dropdowns */
     flex-wrap: wrap; /* wrap for smaller screens */
-    gap: 10px; /* space between controls
-     */
+    gap: 10px; /* space between controls */
   }
