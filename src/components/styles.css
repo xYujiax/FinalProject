@@ -11,8 +11,9 @@
     text-align: center;
   }
 
-  #histogram {
+  .histogram {
     width: 100%;
+    justify-content: center;
   }
 
   #sampleSize {
