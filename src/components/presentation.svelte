@@ -47,19 +47,29 @@
     <div class='text-blue-500 mt-2'> Welcome to an Exploratory Intro to CLT!</div>
     <div data-auto-animate-delay=1> Some tips for navigating:
     <ul data-auto-animate-delay=1 class='list-square'>
-        <li class='text-sm mt-4'>Use your computer arrow keys or click the arrows on the bottom right</li>
-        <li class='text-sm mt-2'>Slide numbers are found at the bottom right of the screen</li>
-        <li class='text-sm mt-2'>To skip to a slide, enter 'g' on your keyboard, and then type the desired number of the slide you wish to see</li>
-        <li class='text-sm mt-2'><strong>Skip to the last slide to play with our interactive CLT simulator!</strong></li>
+        <li class='text-sm mt-4'>Use your computer <strong>arrow keys, spacebar, or click the arrows</strong> on the bottom right</li>
+        <li class='text-sm mt-2'>Slide numbers are found at the <strong>bottom right corner</strong> of the screen</li>
+        <li class='text-sm mt-2'>To skip to a particular slide, enter 'g' on your keyboard, and then type the desired number of the slide you wish to see</li>
+        <li class='text-sm mt-2'>You may also press <strong>esc</strong> to navigate to different slides</li>
+        <li class='text-sm mt-2'><strong><em>Skip to the last slide to play with our interactive CLT simulator!</em></strong></li>
     </ul>
+    </div>
+</Slide>
+
+
+<Slide animate>
+    <div class='text-blue-500 mt-2'> Before we get started...</div>
+    <a href="https://www.youtube.com/watch?v=9HiklLqN9lI&Q" class='text-base' style='text-aign: center;'>here's a link to our demo vid if you care~</a>
+    <div class='container'>
+        <iframe title='Apologies for the Jankiness' width="560" height="315" src="https://www.youtube.com/watch?v=9HiklLqN9lI&Q" frameborder="0" allowfullscreen></iframe>
     </div>
 </Slide>
 
 <Slide animate>
     <div class='text-blue-500 mt-8'>The heck is CLT anyway?</div>
     <p data-auto-animate-delay=1 class='text-base'>CLT is a super clutch theory used in probability and statistics. </p>
-    <p data-auto-animate-delay=2 class='text-base'>It says that the distribution of sample means taken from any population will be approximately normal and centered around the true population mean.</p>
-    <p data-auto-animate-delay=3 class='text-base'>That already sounds confusing, so we’ll explain more as we go!</p>
+    <p data-auto-animate-delay=2.5 class='text-base'>It says that the distribution of sample means taken from any population will be approximately normal and centered around the true population mean.</p>
+    <p data-auto-animate-delay=5 class='text-base'>That already sounds confusing, so we’ll explain more as we go!</p>
 </Slide>
 
 <Slide animate>
@@ -178,17 +188,17 @@
     <div class='text-blue-500 mt-2'>Moral of the story?</div>
     
     <p class='text-sm mt-2'style="font-size: 16px;" data-auto-animate-delay=1>Even if you have a small brain...</p>
-    <p class='text-sm mt-2'style="font-size: 18px;" data-auto-animate-delay=3>Even if an expert with a bigger brain tells you something...</p>
-    <p class='text-sm mt-2' style="font-size: 20px;" data-auto-animate-delay=5><strong>YOU MUST NOT SUCCUMB</strong></p>
-    <p class='text-sm mt-2' style="font-size: 22px;" data-auto-animate-delay=7><strong>TO THE OPINIONS OF THE BIGGER BRAINED PERSON</strong></p>
-    <p class='text-sm mt-2' style="font-size: 24px;" data-auto-animate-delay=9><strong>WITHOUT TESTING AND VERIFYING FIRST</strong></p>
+    <p class='text-sm mt-2'style="font-size: 18px;" data-auto-animate-delay=2.5>Even if an expert with a bigger brain tells you something...</p>
+    <p class='text-sm mt-2' style="font-size: 20px;" data-auto-animate-delay=4.5><strong>YOU MUSTN'T SUCCUMB</strong></p>
+    <p class='text-sm mt-2' style="font-size: 22px;" data-auto-animate-delay=6><strong>TO THE OPINIONS OF THE BIGGER BRAINED PERSON</strong></p>
+    <p class='text-sm mt-2' style="font-size: 24px;" data-auto-animate-delay=8><strong>WITHOUT TESTING AND VERIFYING FIRST</strong></p>
 </Slide>
 
 <Slide animate>
     <div class='text-blue-500 mt-2'>Ty for coming to our TedTalk ❤️</div>
     
     <p class='mt-2 text-xl'data-auto-animate-delay=1>Still feel like testing out different datasets and sample sizes to understand CLT?</p>
-    <p class='mt-2 text-xl'data-auto-animate-delay=3>Worry not -- We have just the thing to help you out!</p>
-    <button id='nuke' class='text-lg' data-auto-animate-delay=5>Click here to continue exploring!</button>
+    <p class='mt-2 text-xl'data-auto-animate-delay=2.5>Worry not -- We have just the thing to help you out!</p>
+    <button id='nuke' class='text-lg' data-auto-animate-delay=2.5>Click here to continue exploring!</button>
 
 </Slide>
