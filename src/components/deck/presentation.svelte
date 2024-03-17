@@ -66,7 +66,7 @@
     <div class='text-blue-500 mt-8'>Let's take a look at Iris flower sepal lengths!</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\iris1.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src="../../../src/components/deck/notfeetpics/iris1.png" alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'> Here’s a distribution of Iris flower sepal lengths. It has a sorta normal (bell-curvy) looking distribution, but not really. We’ll do something interesting:
             
@@ -84,7 +84,7 @@
     <div class='text-blue-500 mt-8'>Tadaaa~</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\iris2.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src="../../../src/components/deck/notfeetpics/iris2.png" alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'> 
             <p class='mt-2'>Notice how it looks a lot more like a <strong>normal distribution</strong>?</p>
@@ -98,7 +98,7 @@
     <div class='text-blue-500 mt-8'>Now let's look at US County Populations!</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\county3.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src='../../../src/components/deck/notfeetpics/county3.png' alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'> This is unbelievable skewed! This is likely due to a few outlier counties with insanely large populations:
             <br><br><strong>Can CLT live up to its name even with this dataset?</strong>
@@ -118,7 +118,7 @@
     <div class='text-blue-500 mt-8'>*Gasp*</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\county4.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src='../../../src/components/deck/notfeetpics/county4.png' alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'>There's no way that sample mean distribution looks normal! Have we been lied too???
             <br><br><strong>Was CLT just a scam all along? How can this be?!</strong>
@@ -130,7 +130,7 @@
     <div class='text-blue-500 mt-8'>THIS REQUIRES INVESTIGATION!!!</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\county5.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src='../../../src/components/deck/notfeetpics/county5.png' alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'>
             <ul style='list-style-type: none'>An interesting point of consideration:
@@ -146,7 +146,7 @@
     <div class='text-blue-500 mt-8'>Taking a bigger sample size</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\county6.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src='../../../src/components/deck/notfeetpics/county6.png' alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'>
             <ul style='list-style-type: none'>
@@ -162,7 +162,7 @@
     <div class='text-blue-500 mt-8'>Going balls to the wall!</div>
     <div class='container'>
         <div class='image'>
-            <img src='src\components\deck\notfeetpics\county7.png' alt = 'regular Iris petal distribution (slightly normal)'>
+            <img src='../../../src/components/deck/notfeetpics/county7.png' alt = 'regular Iris petal distribution (slightly normal)'>
         </div> 
         <div class='text'>
             <ul style='list-style-type: none'>
